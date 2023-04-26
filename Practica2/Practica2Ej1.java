@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pruebas {
+public class Practica2Ej1 {
 
   public static void main(String args[]) {
     int primerArgumento = Integer.valueOf(args[0]);
@@ -21,6 +21,13 @@ public class Pruebas {
 
     for (int i = 0; i < primerArgumento; i++) {
       myList.get(i).start();
+    }
+    
+    for (int i = 0; i < primerArgumento; i++) {
+      //while(myList.get(i).isAlive()){}   
+      try{
+        myList.get(i).join();
+      }catch(InterruptedException e){}
     }
 
     System.out.println("Bye i am number: " + Thread.currentThread().getName());
